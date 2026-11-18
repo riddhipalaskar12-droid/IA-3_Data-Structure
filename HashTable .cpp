@@ -1,4 +1,20 @@
 
+/*
+Project: Hash Table Implementation
+PRN: 202501100040
+
+Personalization Details:
+Seed (Last 4 Digits): 40
+Scenario: Cold-Drink Flavours
+Hash Function: Division Method
+Collision Strategy: Linear Probing
+Dataset Size: 20
+Hash Table Size: 23
+
+Dataset Formula:
+v[i] = (40 + 13 * i) % 100
+*/
+
 #include <iostream>
 using namespace std;
 
@@ -22,7 +38,6 @@ int divisionHash(int key) {
 
 // Insert using Linear Probing
 void insertKey(int key) {
-
     int index = divisionHash(key);
     int startIndex = index;
 
@@ -51,12 +66,10 @@ void insertKey(int key) {
 
 // Search for a key
 bool searchKey(int key) {
-
     int index = divisionHash(key);
     int startIndex = index;
 
     while (hashTable[index] != -1) {
-
         if (hashTable[index] == key) {
             return true;
         }
@@ -73,11 +86,9 @@ bool searchKey(int key) {
 
 // Display Hash Table
 void displayTable() {
-
     cout << "\nFinal Hash Table:\n";
 
     for (int i = 0; i < TABLE_SIZE; i++) {
-
         cout << i << " : ";
 
         if (hashTable[i] == -1)
@@ -90,7 +101,6 @@ void displayTable() {
 }
 
 int main() {
-
     // Initialize Hash Table
     for (int i = 0; i < TABLE_SIZE; i++) {
         hashTable[i] = -1;
@@ -112,7 +122,6 @@ int main() {
     int foundCount = 0;
 
     for (int i = 0; i < DATA_SIZE; i++) {
-
         if (searchKey(flavours[i])) {
             foundCount++;
         }
